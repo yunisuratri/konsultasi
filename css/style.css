@@ -457,6 +457,14 @@
 }
 /*** Ajukan Konsultasi End ***/
 
+/* Separator Line Start */
+hr.my-5 {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid var(--bs-gray);
+}
+/* Separator Line End */
+
 /* Pantau Konsultasi Start */
 .konsultasi-item-content h4 {
   margin-bottom: 10px !important;

@@ -59,7 +59,7 @@
         <nav class="navbar navbar-expand-lg navbar-light">
           <a href="#" class="navbar-brand p-0">
             <h1 class="text-primary mb-0">
-              <i class="fab fa-slack me-2"></i> Ajukan Konsultasi
+              <i class="fab fa-slack me-2"></i> Layanan Konsultasi
             </h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
           </a>
@@ -107,6 +107,181 @@
       </div>
     </div>
     <!-- Header End -->
+
+    <!-- Pantau Konsultasi Start -->
+    <div class="container-fluid pantau bg-light py-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h1 class="display-4 mb-4">Silahkan Pantau Konsultasi Anda</h1>
+          <p class="mb-4">
+            Pantau proses konsultasi yang anda ajukan secara real time.
+          </p>
+        </div>
+        <div class="container form-pantau">
+          <div class="col-xl wow fadeInUp" data-wow-delay="0.4s">
+            <div
+              class="bg-light rounded border-gray shadow-lg p-5 align-item-center"
+              style="
+                max-width: 900px;
+                padding: 40px;
+                margin: auto;
+                border: 1px solid gray;
+              "
+            >
+              <div class="col-lg-12 mb-3">
+                <div
+                  class="alert alert-light alert-dismissible fade show border border-gray"
+                  style="border-radius: 10px"
+                  role="alert"
+                >
+                  <div class="d-flex bd-highlight">
+                    <div class="bd-highlight">
+                      <p class="fs-6 lh-base fw-normal text-muted">
+                        Silakan pilih salah satu menu dibawah untuk memantau
+                        konsultasi yang telah anda adukan sebelumnya. Kode
+                        registrasi pengaduan dapat dilihat pada dokumen
+                        <strong>Bukti Registrasi</strong> pengaduan yang anda
+                        dapatkan saat pengajuan pengaduan. Anda juga dapat
+                        memantau pengaduan yang telah ajukan berdasarkan
+                        <strong>Email</strong> dan
+                        <strong>Nomor Handphone</strong> dicantumkan saat
+                        pengajuan pengaduan.
+                      </p>
+                    </div>
+                    <div class="bd-highlight align-items-center">
+                      <button
+                        type="button"
+                        class="btn-close btn-xs"
+                        data-bs-dismiss="alert"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 d-grid-column justify-content-center">
+                <ul
+                  class="nav nav-pills d-grid-column justify-content-center mb-3"
+                  id="pills-tab"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active w-100 fade show border border-primary"
+                      id="pills-registration-code-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-registration-code"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-registration-code"
+                      aria-selected="true"
+                    >
+                      Berdasarkan Kode Registrasi
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link w-100 fade show border border-primary"
+                      id="pills-email-phone-tab"
+                      data-bs-toggle="pill"
+                      data-bs-target="#pills-email-phone"
+                      type="button"
+                      role="tab"
+                      aria-controls="pills-email-phone"
+                      aria-selected="false"
+                    >
+                      Berdasarkan Email & No. Handphone
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="tab-content" id="pills-tabContent">
+                <!-- TAB BERDASARKAN KODE REGISTRASI -->
+                <div
+                  class="tab-pane fade show active"
+                  id="pills-registration-code"
+                  role="tabpanel"
+                  aria-labelledby="pills-home-tab"
+                >
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label for="exampleInputRegistration" class="form-label"
+                        >Kode Registrasi :</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        v-model="registrationCode"
+                        aria-describedby="emailHelp"
+                        placeholder="Contoh : 8127312827 . . "
+                      />
+                    </div>
+                    <div class="col-12 mb-0 pb-5 text-center">
+                      <button
+                        class="btn btn-primary px-4 py-2"
+                        style="font-weight: 500"
+                      >
+                        <i class="fa-solid fa-magnifying-glass me-2"></i>Pantau
+                        Pengaduan
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- TAB BERDASARKAN EMAIL & NO TELP -->
+                <div
+                  class="tab-pane fade"
+                  id="pills-email-phone"
+                  role="tabpanel"
+                  aria-labelledby="pills-profile-tab"
+                >
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"
+                      >Email :</label
+                    >
+                    <input
+                      type="email"
+                      v-model="email"
+                      class="form-control"
+                      placeholder="Contoh : suryasa@gmail.com"
+                    />
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputNumber" class="form-label"
+                      >No. Handphone :</label
+                    >
+                    <input
+                      class="form-control"
+                      v-model="phone"
+                      placeholder="Contoh: 087734192876"
+                    />
+                  </div>
+
+                  <div class="col-12 mb-0 pb-5 text-center">
+                    <button
+                      :disabled="disableSearchButton"
+                      @click="getComplaintData()"
+                      type="button"
+                      class="btn btn-primary px-4 py-2"
+                      style="font-weight: 500"
+                    >
+                      <i class="fa-solid fa-magnifying-glass me-2"></i>Pantau
+                      Pengaduan
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pantau Konsultasi End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
