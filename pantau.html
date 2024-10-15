@@ -163,41 +163,43 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-12 d-grid-column justify-content-center">
-                <ul
-                  class="nav nav-pills d-grid-column justify-content-center mb-3"
-                  id="pills-tab"
-                  role="tablist"
-                >
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link active w-100 fade show border border-primary"
-                      id="pills-registration-code-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-registration-code"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-registration-code"
-                      aria-selected="true"
-                    >
-                      Berdasarkan Kode Registrasi
-                    </button>
-                  </li>
-                  <li class="nav-item" role="presentation">
-                    <button
-                      class="nav-link w-100 fade show border border-primary"
-                      id="pills-email-phone-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#pills-email-phone"
-                      type="button"
-                      role="tab"
-                      aria-controls="pills-email-phone"
-                      aria-selected="false"
-                    >
-                      Berdasarkan Email & No. Handphone
-                    </button>
-                  </li>
-                </ul>
+              <div class="row g-3">
+                <div class="col-lg-12 d-grid-column justify-content-center">
+                  <ul
+                    class="nav nav-pills d-grid-column justify-content-center mb-3"
+                    id="pills-tab"
+                    role="tablist"
+                  >
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link active w-100 fade show border border-primary px-3 py-2 px-md-5 me-5"
+                        id="pills-registration-code-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-registration-code"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-registration-code"
+                        aria-selected="true"
+                      >
+                        Berdasarkan Kode Registrasi
+                      </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button
+                        class="nav-link w-100 fade show border border-primary px-3 py-2 px-md-5 me-2"
+                        id="pills-email-phone-tab"
+                        data-bs-toggle="pill"
+                        data-bs-target="#pills-email-phone"
+                        type="button"
+                        role="tab"
+                        aria-controls="pills-email-phone"
+                        aria-selected="false"
+                      >
+                        Berdasarkan Email & No. Handphone
+                      </button>
+                    </li>
+                  </ul>
+                </div>
               </div>
               <div class="tab-content" id="pills-tabContent">
                 <!-- TAB BERDASARKAN KODE REGISTRASI -->
@@ -208,21 +210,20 @@
                   aria-labelledby="pills-home-tab"
                 >
                   <div class="row g-3">
-                    <div class="col-12">
-                      <label for="exampleInputRegistration" class="form-label"
-                        >Kode Registrasi :</label
-                      >
-                      <input
-                        type="number"
-                        class="form-control"
-                        v-model="registrationCode"
-                        aria-describedby="emailHelp"
-                        placeholder="Contoh : 8127312827 . . "
-                      />
+                    <div class="col-lg-12">
+                      <div class="form-floating">
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="registrationCode"
+                          placeholder="Kode Registrasi"
+                        />
+                        <label for="phone">Kode Registrasi</label>
+                      </div>
                     </div>
-                    <div class="col-12 mb-0 pb-5 text-center">
+                    <div class="col-12 mb-0 text-center">
                       <button
-                        class="btn btn-primary px-4 py-2"
+                        class="btn btn-primary rounded-pill px-4 py-3 px-md-5 me-2"
                         style="font-weight: 500"
                       >
                         <i class="fa-solid fa-magnifying-glass me-2"></i>Pantau
@@ -239,40 +240,38 @@
                   role="tabpanel"
                   aria-labelledby="pills-profile-tab"
                 >
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"
-                      >Email :</label
-                    >
-                    <input
-                      type="email"
-                      v-model="email"
-                      class="form-control"
-                      placeholder="Contoh : suryasa@gmail.com"
-                    />
-                  </div>
-
-                  <div class="mb-3">
-                    <label for="exampleInputNumber" class="form-label"
-                      >No. Handphone :</label
-                    >
-                    <input
-                      class="form-control"
-                      v-model="phone"
-                      placeholder="Contoh: 087734192876"
-                    />
-                  </div>
-
-                  <div class="col-12 mb-0 pb-5 text-center">
-                    <button
-                      :disabled="disableSearchButton"
-                      @click="getComplaintData()"
-                      type="button"
-                      class="btn btn-primary px-4 py-2"
-                      style="font-weight: 500"
-                    >
-                      <i class="fa-solid fa-magnifying-glass me-2"></i>Pantau
-                      Pengaduan
-                    </button>
+                  <div class="row g-3">
+                    <div class="col-lg-12">
+                      <div class="form-floating">
+                        <input
+                          type="email"
+                          class="form-control border-0"
+                          id="email"
+                          placeholder="Your Email"
+                        />
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="col-lg-12">
+                      <div class="form-floating">
+                        <input
+                          type="phone"
+                          class="form-control border-0"
+                          id="phone"
+                          placeholder="Phone"
+                        />
+                        <label for="phone">No. HandPhone</label>
+                      </div>
+                    </div>
+                    <div class="col-12 mb-0 text-center">
+                      <button
+                        class="btn btn-primary rounded-pill px-4 py-3 px-md-5 me-2"
+                        style="font-weight: 500"
+                      >
+                        <i class="fa-solid fa-magnifying-glass me-2"></i>Pantau
+                        Pengaduan
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
