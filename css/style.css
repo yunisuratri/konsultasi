@@ -487,24 +487,26 @@ hr.my-5 {
 
 /* Pantau Konsultasi Start */
 .konsultasi-item-content h1 {
-  text-align: left;
+  text-align: center;
 }
 
-.konsultasi-item-content h4 {
-  margin-bottom: 10px !important;
+.konsultasi-item-content p {
+  margin-bottom: 20px !important;
   color: gray !important;
-  text-align: left;
+  text-align: center;
   font-weight: normal;
 }
 
-.konsultasi-item-content .btn {
-  margin-top: 10px;
-  text-align: left;
+.konsultasi-item-conten p.text-dark.mb-4 {
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-.konsultasi-item-content h4.text-dark.mb-4 {
-  margin-bottom: 8px;
-  text-align: left;
+.konsultasi-item-content .btn {
+  margin-top: 20px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
 }
 /* Pantau Konsultasi End */
 
