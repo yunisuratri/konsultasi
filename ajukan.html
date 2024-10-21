@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Layanan Pengaduan Konsultasi BKPSDM</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="keywords" />
+    <meta content="" name="description" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icon Font Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <!-- Libraries Stylesheet -->
+    <link rel="stylesheet" href="lib/animate/animate.min.css" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Spinner Start -->
+    <div
+      id="spinner"
+      class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center"
+    >
+      <div
+        class="spinner-border text-primary"
+        style="width: 3rem; height: 3rem"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a href="#" class="navbar-brand p-0">
+            <h1 class="text-primary mb-0">
+              <i class="fab fa-slack me-2"></i> Layanan Konsultasi
+            </h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+          >
+            <span class="fa fa-bars"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav mx-0 mx-lg-auto">
+              <a href="index.html" class="nav-item nav-link">Beranda</a>
+              <a href="ajukan.html" class="nav-item nav-link active"
+                >Ajukan Konsultasi</a
+              >
+              <a href="pantau.html" class="nav-item nav-link"
+                >Pantau Konsultasi</a
+              >
+              <a href="masuk.html" class="nav-item nav-link">Masuk</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+      <div class="container text-center py-5" style="max-width: 900px">
+        <h4
+          class="text-white display-4 mb-4 wow fadeInDown"
+          data-wow-delay="0.1s"
+        >
+          Pengajuan Konsultasi
+        </h4>
+        <ol
+          class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown"
+          data-wow-delay="0.3s"
+        >
+          <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+          <li class="breadcrumb-item active text-light">Ajukan Konsultasi</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Pengajuan Konsultasi Start -->
+    <div class="container-fluid pengajuan bg-light py-5">
+      <div class="container py-5">
+        <div
+          class="text-center mx-auto pb-5 wow fadeInUp"
+          data-wow-delay="0.2s"
+          style="max-width: 800px"
+        >
+          <h1 class="display-4 mb-4">Silahkan Ajukan Konsultasi Anda</h1>
+          <p class="mb-4">
+            Silakan untuk mengisi formulir berikut untuk dapat mengajukan
+            konsultasi. Dimohon untuk menggunakan kalimat atau bahasa yang sopan
+            dan tidak mengandung unsur SARA.
+          </p>
+        </div>
+        <div class="col-xl wow fadeInUp" data-wow-delay="0.4s">
+          <div
+            class="bg-light rounded border-gray shadow-lg p-5 align-item-center"
+            style="
+              max-width: 900px;
+              padding: 40px;
+              margin: auto;
+              border: 1px solid gray;
+            "
+          >
+            <h4 class="text-primary mb-4">Identitas Diri</h4>
+            <form>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="name"
+                      placeholder="Your Name"
+                    />
+                    <label for="name">Nama</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      class="form-control border-0"
+                      id="email"
+                      placeholder="Your Email"
+                    />
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-floating">
+                    <input
+                      type="phone"
+                      class="form-control border-0"
+                      id="phone"
+                      placeholder="Phone"
+                    />
+                    <label for="phone">No. HandPhone</label>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+            <!-- Separator Line -->
+            <hr class="my-5" />
+
+            <h4 class="text-primary mb-4">Pengajuan Konsultasi</h4>
+            <form>
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="klasifikasi"
+                      placeholder="Klasifikasi"
+                    />
+                    <label for="judul">Klasifikasi Konsultasi</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="judul"
+                      placeholder="Judul Konsultasi"
+                    />
+                    <label for="judul">Judul Konsultasi</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control border-0"
+                      id="deskripsi"
+                      placeholder="Deskripsi Konsultasi"
+                      style="height: 120px"
+                    ></textarea>
+                    <label for="deskripsi">Deskripsi Konsultasi</label>
+                  </div>
+                </div>
+                <div class="col-12 upload-container upload-input-group">
+                  <form action="upload.php" method="post" enctype="multipart/form-data">
+                      <label for="file-pendukung-1" class="custom-file-pendukung" style="margin-bottom: 8px; display: inline-block;">File Pendukung</label>
+                      
+                      <!-- Container for file inputs -->
+                      <div id="file-inputs">                            
+                          <div class="file-input-wrapper" id="file-input-wrapper-1" style="display: flex; align-items: center; margin-bottom: 10px;">
+                              
+                              <!-- Input file -->
+                              <input
+                                  class="form-control"
+                                  style="background-color: white; border: 1px solid #ced4da; flex: 1; border-top-right-radius: 0; border-bottom-right-radius: 0"
+                                  type="file"
+                                  name="files[]"
+                                  id="file-pendukung-1"
+                              />
+                              
+                              <!-- Button "+" inside the same div -->
+                              <button 
+                                  type="button" 
+                                  class="add-remove-btn btn btn-primary btn-upload btn-plus btn-add px-md-5" 
+                                  id="add-btn-1" 
+                                  onclick="addFileInput()" 
+                                  style="margin-left: 0px; border: 1px solid #ced4da; border-left: none; border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                                  +
+                              </button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <!-- Submit button -->
+              <div class="col-12 mb-0 text-center">
+                  <button
+                      class="btn btn-primary rounded-pill px-4 py-3 px-md-5 me-2"
+                      style="font-weight: 500">
+                      <i class="fa-solid fa-magnifying-glass me-2"></i>Ajukan Konsultasi
+                  </button>
+              </div>
+              
+              <script>
+                  let fileInputCount = 1;
+              
+                  // Function to add file input fields
+                  function addFileInput() {
+                      fileInputCount++;
+              
+                      // Clone the first file input wrapper
+                      const originalWrapper = document.getElementById('file-input-wrapper-1');
+                      const newWrapper = originalWrapper.cloneNode(true);
+              
+                      // Update attributes of the cloned input and remove the "+" button
+                      const newInput = newWrapper.querySelector('input');
+                      newInput.id = 'file-pendukung-' + fileInputCount;
+                      newInput.value = ""; // Clear any selected file
+              
+                      // Remove the "+" button in the cloned form
+                      const addButton = newWrapper.querySelector('button');
+                      addButton.remove();  // Remove "+" button from the new input fields
+              
+                      // Create a remove button with border for the new input
+                      const removeButton = document.createElement('button');
+                      removeButton.type = 'button';
+                      removeButton.classList.add('add-remove-btn', 'btn', 'btn-dark', 'btn-upload', 'btn-minus', 'btn-remove', 'px-md-4');
+                      removeButton.innerText = '-';
+                      removeButton.style = "margin-left: 0px; border: 1px solid #ced4da; border-top-left-radius: 0; border-bottom-left-radius: 0";
+                      removeButton.onclick = function() {
+                          newWrapper.remove();
+                      };
+              
+                      // Append the remove button to the new wrapper
+                      newWrapper.appendChild(removeButton);
+              
+                      // Add margin to create space between forms
+                      newWrapper.style.marginBottom = "10px";
+              
+                      // Append the new input wrapper to the file inputs container
+                      const fileInputsContainer = document.getElementById('file-inputs');
+                      fileInputsContainer.appendChild(newWrapper);
+                  }
+              </script>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pengajuan Konsultasi End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+      <div class="container py-5">
+        <div class="row g-5">
+          <div class="col-xl-9">
+            <div class="mb-5">
+              <div class="row g-4">
+                <div class="col-md-6 col-lg-6 col-xl-5">
+                  <div class="footer-item">
+                    <a href="index.html" class="p-0">
+                      <h3 class="text-white">
+                        <i class="fab fa-slack me-3"></i> Layanan Konsultasi
+                      </h3>
+                      <!-- <img src="img/logo.png" alt="Logo"> -->
+                    </a>
+                    <p class="text-white mb-4">
+                      Layanan Konsultasi ini berada di bawah naungan Badan
+                      Kepegawaian dan Pengembangan Sumber Daya Manusia Kabupaten
+                      Badung
+                    </p>
+                    <div class="footer-btn d-flex">
+                      <a class="btn btn-md-square rounded-circle me-3" href="#"
+                        ><i class="fas fa-phone-alt"></i
+                      ></a>
+                      <a class="btn btn-md-square rounded-circle me-3" href="#"
+                        ><i class="fab fa-facebook-f"></i
+                      ></a>
+                      <a class="btn btn-md-square rounded-circle me-3" href="#"
+                        ><i class="fab fa-twitter"></i
+                      ></a>
+                      <a class="btn btn-md-square rounded-circle me-0" href="#"
+                        ><i class="fab fa-instagram"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                  <div class="footer-item">
+                    <h4 class="text-white mb-4">Layanan Terkait</h4>
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> About Us</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Features</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Services</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> FAQ's</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Blogs</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Contact</a
+                    >
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-4">
+                  <div class="footer-item">
+                    <h4 class="mb-4 text-white">Informasi Lainnya</h4>
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> About Us</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Features</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Services</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> FAQ's</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Blogs</a
+                    >
+                    <a href="#"
+                      ><i class="fas fa-angle-right me-2"></i> Contact</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xl-3">
+            <div class="footer-item">
+              <h4 class="text-white mb-4">Lokasi</h4>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15779.750351296512!2d115.1776181!3d-8.6019911!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd2392f68a2f6b1%3A0x2ec888f0229801c3!2sBadan%20Kepegawaian%20dan%20Pengembangan%20Sumber%20Daya%20Manusia%20Kabupaten%20Badung!5e0!3m2!1sen!2sid!4v1728937406449!5m2!1sen!2sid"
+                width="400"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright py-4">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-md-12 text-md-start text-center">
+            <p class="text-body text-white">
+              <i class="fas fa-copyright text-light me-2"></i>BKPSDM Kabupaten
+              Badung 2024, All right reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"
+      ><i class="fa fa-arrow-up"></i
+    ></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
