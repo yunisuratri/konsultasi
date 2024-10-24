@@ -418,10 +418,6 @@
 }
 /*** Tahapan Pengaduan End ***/
 
-/*** Pemantauan Konsultasi Start ***/
-
-/*** Pemantauan Konsultasi End ***/
-
 /*** Ajukan Konsultasi Start ***/
 .contact .contact-img {
   position: relative;
@@ -676,6 +672,14 @@ hr.my-5 {
   min-height: 1px;
   margin: 0 1rem;
   background-color: var(--bs-gray);
+}
+
+.bs-stepper-header .step:first-child .bs-stepper-line {
+  display: none;
+}
+
+.bs-stepper-header .step:last-child .bs-stepper-line {
+  display: none;
 }
 
 @media (max-width: 400px) {
