@@ -4834,7 +4834,7 @@ fieldset:disabled .btn {
 .breadcrumb-item + .breadcrumb-item::before {
   float: left;
   padding-right: 0.5rem;
-  color: #6c757d;
+  color: var(--bs-light);
   content: var(
     --bs-breadcrumb-divider,
     "/"

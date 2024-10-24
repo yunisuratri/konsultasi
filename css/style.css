@@ -313,7 +313,7 @@
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(1, 95, 201, 0.9), rgba(0, 0, 0, 0.2)),
-    url(../img/bg-breadcrumb.jpg);
+    url(../img/komunikasi.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -374,7 +374,7 @@
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: #ddd;
+  background-color: var(--bs-gray);
 }
 
 .bs-stepper-line {
@@ -417,6 +417,10 @@
   }
 }
 /*** Tahapan Pengaduan End ***/
+
+/*** Pemantauan Konsultasi Start ***/
+
+/*** Pemantauan Konsultasi End ***/
 
 /*** Ajukan Konsultasi Start ***/
 .contact .contact-img {
@@ -674,14 +678,6 @@ hr.my-5 {
   background-color: var(--bs-gray);
 }
 
-.bs-stepper-header .step:first-child .bs-stepper-line {
-  display: none;
-}
-
-.bs-stepper-header .step:last-child .bs-stepper-line {
-  display: none;
-}
-
 @media (max-width: 400px) {
   .bs-stepper-line,
   .bs-stepper .line {
@@ -746,4 +742,65 @@ hr.my-5 {
 .bs-stepper .content.dstepper-block {
   display: block;
 }
+
+.row {
+  display: flex;
+  justify-content: center; /* Pusatkan konten di dalam row */
+}
+
+.nav-pills {
+  display: flex; /* Pastikan ul menggunakan flexbox */
+  justify-content: center; /* Pusatkan items dalam nav-pills */
+}
+
+.custom-nav-item {
+  flex: 1; /* Make both buttons take equal width */
+  position: relative; /* Required for the divider */
+}
+
+.custom-nav-item:first-child .nav-link {
+  border-top-left-radius: 10px; /* Add rounded corners for the first button */
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none; /* Remove right border for the first button */
+}
+
+.custom-nav-item:last-child .nav-link {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 10px; /* Add rounded corners for the last button */
+  border-bottom-right-radius: 10px;
+}
+
+/* Center divider between buttons */
+.custom-nav-item:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%; /* Pindahkan ke tengah */
+  transform: translateX(-50%); /* Pusatkan */
+  width: 2px; /* Lebar divider */
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .nav-pills {
+    flex-direction: column; /* Stack buttons on smaller screens */
+  }
+
+  .custom-nav-item {
+    margin-bottom: 0px; /* Add space between stacked buttons */
+  }
+
+  .custom-nav-item:first-child::after {
+    display: none; /* Remove the divider on small screens */
+  }
+
+  .custom-nav-item:first-child .nav-link,
+  .custom-nav-item:last-child .nav-link {
+    border-radius: 10px; /* Rounded corners for both buttons on small screens */
+  }
+}
+
 /* Stepper End */

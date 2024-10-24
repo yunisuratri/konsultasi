@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>LifeSure - Life Insurance Website Template</title>
+    <title>Layanan Pengaduan Konsultasi BKPSDM</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <meta content="" name="keywords" />
     <meta content="" name="description" />
@@ -102,21 +102,21 @@
           data-wow-delay="0.3s"
         >
           <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
-          <li class="breadcrumb-item active text-primary">Ajukan Konsultasi</li>
+          <li class="breadcrumb-item active text-light">Ajukan Konsultasi</li>
         </ol>
       </div>
     </div>
     <!-- Header End -->
 
-    <!-- Pengaduan Konsultasi Start -->
-    <div class="container-fluid pengaduan bg-light py-5">
+    <!-- Pengajuan Konsultasi Start -->
+    <div class="container-fluid pengajuan bg-light py-5">
       <div class="container py-5">
         <div
           class="text-center mx-auto pb-5 wow fadeInUp"
           data-wow-delay="0.2s"
           style="max-width: 800px"
         >
-          <h1 class="display-4 mb-4">Silahkan Adukan Konsultasi Anda</h1>
+          <h1 class="display-4 mb-4">Silahkan Ajukan Konsultasi Anda</h1>
           <p class="mb-4">
             Silakan untuk mengisi formulir berikut untuk dapat mengajukan
             konsultasi. Dimohon untuk menggunakan kalimat atau bahasa yang sopan
@@ -175,9 +175,20 @@
             <!-- Separator Line -->
             <hr class="my-5" />
 
-            <h4 class="text-primary mb-4">Pengaduan Konsultasi</h4>
+            <h4 class="text-primary mb-4">Pengajuan Konsultasi</h4>
             <form>
               <div class="row g-3">
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control border-0"
+                      id="klasifikasi"
+                      placeholder="Klasifikasi"
+                    />
+                    <label for="judul">Klasifikasi Konsultasi</label>
+                  </div>
+                </div>
                 <div class="col-12">
                   <div class="form-floating">
                     <input
@@ -200,27 +211,87 @@
                     <label for="deskripsi">Deskripsi Konsultasi</label>
                   </div>
                 </div>
-                <div class="col-12">
-                  <label for="FilePendukung" class="form-label"
-                    >File Pendukung</label
-                  >
-                  <input
-                    class="form-control"
-                    style="background-color: white; border: 1px solid #ced4da"
-                    type="file"
-                    id="FilePendukung"
-                    multiple
-                  />
-                </div>
-                <div class="col-12 mb-0 text-center">
+                <div class="col-12 upload-container upload-input-group">
+                  <form action="upload.php" method="post" enctype="multipart/form-data">
+                      <label for="file-pendukung-1" class="custom-file-pendukung" style="margin-bottom: 8px; display: inline-block;">File Pendukung</label>
+                      
+                      <!-- Container for file inputs -->
+                      <div id="file-inputs">                            
+                          <div class="file-input-wrapper" id="file-input-wrapper-1" style="display: flex; align-items: center; margin-bottom: 10px;">
+                              
+                              <!-- Input file -->
+                              <input
+                                  class="form-control"
+                                  style="background-color: white; border: 1px solid #ced4da; flex: 1; border-top-right-radius: 0; border-bottom-right-radius: 0"
+                                  type="file"
+                                  name="files[]"
+                                  id="file-pendukung-1"
+                              />
+                              
+                              <!-- Button "+" inside the same div -->
+                              <button 
+                                  type="button" 
+                                  class="add-remove-btn btn btn-primary btn-upload btn-plus btn-add px-md-5" 
+                                  id="add-btn-1" 
+                                  onclick="addFileInput()" 
+                                  style="margin-left: 0px; border: 1px solid #ced4da; border-left: none; border-top-left-radius: 0; border-bottom-left-radius: 0;">
+                                  +
+                              </button>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              
+              <!-- Submit button -->
+              <div class="col-12 mb-0 text-center">
                   <button
-                    class="btn btn-primary rounded-pill px-4 py-3 px-md-5 me-2"
-                    style="font-weight: 500"
-                  >
-                    <i class="fa-solid fa-magnifying-glass me-2"></i>Ajukan
-                    Pengaduan
+                      class="btn btn-primary rounded-pill px-4 py-3 px-md-5 me-2"
+                      style="font-weight: 500">
+                      <i class="fa-solid fa-magnifying-glass me-2"></i>Ajukan Konsultasi
                   </button>
-                </div>
+              </div>
+              
+              <script>
+                  let fileInputCount = 1;
+              
+                  // Function to add file input fields
+                  function addFileInput() {
+                      fileInputCount++;
+              
+                      // Clone the first file input wrapper
+                      const originalWrapper = document.getElementById('file-input-wrapper-1');
+                      const newWrapper = originalWrapper.cloneNode(true);
+              
+                      // Update attributes of the cloned input and remove the "+" button
+                      const newInput = newWrapper.querySelector('input');
+                      newInput.id = 'file-pendukung-' + fileInputCount;
+                      newInput.value = ""; // Clear any selected file
+              
+                      // Remove the "+" button in the cloned form
+                      const addButton = newWrapper.querySelector('button');
+                      addButton.remove();  // Remove "+" button from the new input fields
+              
+                      // Create a remove button with border for the new input
+                      const removeButton = document.createElement('button');
+                      removeButton.type = 'button';
+                      removeButton.classList.add('add-remove-btn', 'btn', 'btn-dark', 'btn-upload', 'btn-minus', 'btn-remove', 'px-md-4');
+                      removeButton.innerText = '-';
+                      removeButton.style = "margin-left: 0px; border: 1px solid #ced4da; border-top-left-radius: 0; border-bottom-left-radius: 0";
+                      removeButton.onclick = function() {
+                          newWrapper.remove();
+                      };
+              
+                      // Append the remove button to the new wrapper
+                      newWrapper.appendChild(removeButton);
+              
+                      // Add margin to create space between forms
+                      newWrapper.style.marginBottom = "10px";
+              
+                      // Append the new input wrapper to the file inputs container
+                      const fileInputsContainer = document.getElementById('file-inputs');
+                      fileInputsContainer.appendChild(newWrapper);
+                  }
+              </script>
                 </div>
               </div>
             </form>
@@ -228,7 +299,7 @@
         </div>
       </div>
     </div>
-    <!-- Pengaduan Konsultasi End -->
+    <!-- Pengajuan Konsultasi End -->
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -369,3 +440,4 @@
     <script src="js/main.js"></script>
   </body>
 </html>
+
